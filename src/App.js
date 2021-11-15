@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import Filter from "./TodoEditor/Filter";
 // import axios from 'axios';
 // import ColorPicker from "./ColorPicker";
@@ -6,9 +7,11 @@ import Filter from "./TodoEditor/Filter";
 import TodoList from "./TodoList";
 import Form from "./Form";
 import TodoEditor from "./TodoEditor";
-import shortid from "shortid";
+//import shortid from "shortid";
 import Modal from "./Modal";
 import Counter from "./Counter";
+import Stat from "./Stat";
+
 // import Clock from "./Clock";
 
 //import { findRenderedDOMComponentWithClass } from "react-dom/test-utils";
@@ -130,7 +133,7 @@ class App extends Component {
           <Modal onClose={this.toggleModal}>
             {/* <h1>Это модальное окно</h1>
             <p>Lorem Ipsum";</p> */}
-            <TodoEditor />
+            <TodoEditor onSave={this.toggleModal} />
             <button type="button" onClick={this.toggleModal}>
               Закрыть модалку
             </button>
@@ -163,10 +166,7 @@ class App extends Component {
           </label>
         </form> */}
 
-        {/* <div>
-          <p>Общее кол-во {totalTodo}</p>
-          <p> Кол-во выполненных {complitedTodo}</p>
-        </div> */}
+        <Stat />
 
         <TodoList />
         {/* <ColorPicker options={colorPickerOpt} /> */}
