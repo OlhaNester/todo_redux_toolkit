@@ -20,6 +20,12 @@ const items = createReducer([], {
   [actions.addTodo]: (state, action) => [...state, action.payload],
   [actions.deleteTodo]: (state, action) =>
     state.filter(({ id }) => id !== action.payload),
+  [actions.toggleCompleted]: (state, action) =>
+    state.map((todo) =>
+      todo.id === action.payload
+        ? { ...todo, completed: !todo.completed }
+        : todo
+    ),
 });
 
 // const filter = (state = "", { type, payload }) => {

@@ -63,25 +63,23 @@ class App extends Component {
   //   }));
   // };
 
-  toggleCompleted = (todoId) => {
-    console.log(todoId);
+  // toggleCompleted = (todoId) => {
+  //   console.log(todoId);
 
-    this.setState((prevState) => ({
-      // можно переписать в виде тернарника:
-      todos: prevState.todos.map((todo) => {
-        // this.setState(prevState =>
-        if (todo.id === todoId) {
-          // todos: prevState.todos.map(todo => {
-          return {
-            // todo.id === todoId ?
-            ...todo,
-            completed: !todo.completed, // {  ...todo, completed: !todo.completed,} : todo
-          };
-        }
-        return todo; //если id не равен, мы возвращаем старый todo
-      }),
-    }));
-  };
+  //   this.setState((prevState) => ({
+  //     // можно переписать в виде тернарника: this.setState(prevState =>todos: prevState.todos.map(todo => {todo.id === todoId ?{  ...todo, completed: !todo.completed,} : todo
+  //     todos: prevState.todos.map((todo) => {
+
+  //       if (todo.id === todoId) {
+  //         return {
+  //             ...todo,
+  //           completed: !todo.completed,
+  //         };
+  //       }
+  //       return todo;
+  //     }),
+  //   }));
+  // };
   toggleModal = () => {
     this.setState(({ showModal }) => ({
       showModal: !showModal,
