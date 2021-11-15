@@ -47,7 +47,7 @@ const mapStateToProps = ({ todos: { items, filter } }) => ({
   todos: getVisibleTodos(items, filter),
 });
 const mapDispatchToProps = (dispatch) => ({
-  onToggleCompleted: () => null,
+  onToggleCompleted: (id) => dispatch(todosActions.toggleCompleted(id)),
   onDeleteTodo: (id) => dispatch(todosActions.deleteTodo(id)),
 });
 
