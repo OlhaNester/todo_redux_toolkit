@@ -36,8 +36,8 @@ class TodoEditor extends Component {
     );
   }
 }
-const mapDispatchToProps = (dispatch) => ({
-  onSubmit: (text) => dispatch(todosActions.addTodo(text)),
-});
+const mapDispatchToProps = {
+  onSubmit: todosActions.addTodo,
+};
 
 export default connect(null, mapDispatchToProps)(TodoEditor);
